@@ -2,7 +2,7 @@ import pandas as pd
 
 # URL of the raw CSV file on GitHub
 # Replace with the actual raw GitHub URL of your CSV file
-url = "https://github.com/jforbes24/apple/blob/main/D%26T%20Data%20Test%20No%201.csv"
+url = "https://github.com/jforbes24/apple/blob/main/D%26T%20Data%20Test%20No%201.xlsx"
 
 try:
     # Read the CSV file directly into a DataFrame
