@@ -2,6 +2,7 @@ import time
 import random
 import csv
 import logging
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -57,41 +58,52 @@ def get_soup(url, driver, retries=3):
     logger.error(f"Failed to fetch {url} after {retries} attempts")
     return None
 
-def scrape_product_detail(url, driver):
-    logger.info(f"Scraping product detail page: {url}")
-    soup = get_soup(url, driver)
-    if not soup:
-        logger.error(f"No soup object returned for {url}, skipping")
-        return None
-
+def scrape_product_info(product):
+    logger.info("Scraping product information")
     try:
-        title = soup.find('h1', class_='product-name')
-        price = soup.find('span', class_='value')
-        product_code = soup.find('div', class_='product-code')
-        rating = soup.find('span', class_='nvda_star_reading')
-        reviews = soup.find('span', class_='rating-count d-inline-flex mt-1 d-block average-reviews')
+        # Extract data-productdatalayer JSON
+        data_layer = product.get('data-productdatalayer')
+        if not data_layer:
+            logger.warning("No data-productdatalayer found for product")
+            return None
         
-        if title and price:
-            title_text = title.text.strip()
-            price_text = price.text.strip()
-            product_code_text = product_code.text.strip() if product_code else 'No product code'
-            rating_text = rating.text.strip() if rating else 'No rating'
-            reviews_text = reviews.text.strip() if reviews else 'No reviews'
-            
-            logger.info(f"Scraped product: {title_text}, Price: {price_text}, Code: {product_code_text}, Rating: {rating_text}, Reviews: {reviews_text}, URL: {url}")
+        # Parse JSON (remove square brackets and parse first object)
+        try:
+            data = json.loads(data_layer)[0]
+        except json.JSONDecodeError as e:
+            logger.error(f"Error parsing data-productdatalayer: {e}")
+            return None
+
+        # Extract title, price, and product code from data-productdatalayer
+        title_text = data.get('name', 'No title')
+        price_text = str(data.get('price', [{}])[0].get('revenue', 'No price'))
+        product_code_text = data.get('id', 'No product code')
+
+        # Extract URL from the product link
+        link = product.find('a', class_='link text-truncate pdpLink', href=True)
+        product_url = 'https://www.currys.co.uk' + link['href'] if link and not link['href'].startswith('http') else link['href'] if link else 'No URL'
+
+        # Extract rating and reviews from HTML
+        rating = product.find('span', class_='nvda_star_reading')
+        reviews = product.find('span', class_='rating-count average-reviews')
+        rating_text = rating.text.strip() if rating else 'No rating'
+        reviews_text = reviews.text.strip() if reviews else 'No reviews'
+
+        if title_text != 'No title' and price_text != 'No price':
+            logger.info(f"Scraped product: {title_text}, Price: {price_text}, Code: {product_code_text}, Rating: {rating_text}, Reviews: {reviews_text}, URL: {product_url}")
             return {
                 'title': title_text,
                 'price': price_text,
                 'product_code': product_code_text,
                 'rating': rating_text,
                 'reviews': reviews_text,
-                'url': url
+                'url': product_url
             }
         else:
-            logger.warning(f"Product title or price not found on {url}")
+            logger.warning(f"Missing title or price for product: {product_url}")
             return None
-    except AttributeError as e:
-        logger.error(f"Error parsing product detail page {url}: {e}")
+    except Exception as e:
+        logger.error(f"Error parsing product: {e}")
         return None
 
 def scrape_page(url, driver):
@@ -104,30 +116,16 @@ def scrape_page(url, driver):
     product_grid = soup.find('div', class_='row product-grid list-view justify-content-center')
     if not product_grid:
         logger.warning("No product grid found on page")
-        product_urls = []
+        products = []
     else:
-        # Find product links within product items (more specific selector)
-        product_items = product_grid.find_all('div', class_='row plp-list-grid')
-        product_urls = []
-        for item in product_items:
-            link = item.find('a', href=True)
-            if link:
-                product_url = link['href']
-                if not product_url.startswith('http'):
-                    product_url = 'https://www.currys.co.uk' + product_url
-                # Filter URLs to include only product detail pages
-                if '/products/' in product_url:
-                    product_urls.append(product_url)
-                else:
-                    logger.info(f"Skipping non-product URL: {product_url}")
-        logger.info(f"Found {len(product_urls)} product URLs on page")
+        products = product_grid.find_all('div', class_='product')
+        logger.info(f"Found {len(products)} products on page")
     
     product_data = []
-    for product_url in product_urls:
-        info = scrape_product_detail(product_url, driver)
+    for product in products:
+        info = scrape_product_info(product)
         if info:
             product_data.append(info)
-        time.sleep(random.uniform(1, 3))  # Delay between product detail page requests
     
     logger.info(f"Collected {len(product_data)} valid products from page")
     
