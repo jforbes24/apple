@@ -36,10 +36,9 @@ This repository contains the codebase and documentation for the Partner Data Ana
 ### 6. Share Insights
 
 - Insights are derived from the dataset and shared with the partner, focusing on:
-  - Brand per Reseller: Building trust by tailoring insights to specific reseller brands.
   - Trends and Percentages: Emphasizing data-driven trends and percentage-based metrics for clarity.
   - Confidentiality: Reinforcing strict adherence to confidentiality in all shared outputs.
-
+  - Branding per Reseller: Building trust by tailoring insights to specific reseller style-housing.
 
 
 ### 7. Share Repository with Partner
