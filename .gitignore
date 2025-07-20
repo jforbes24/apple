@@ -3,4 +3,3 @@ include
 lib
 pyvenv.cfg
 .env
-.venv

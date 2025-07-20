@@ -1,0 +1,19 @@
+{
+    "python.createEnvironment.trigger": "off",
+    "terminal.integrated.inheritEnv": false,
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "search.exclude": {
+        "**/__pycache__": true
+    },
+    "git.autofetch": true,
+    "settingsSync.ignoredSettings": [
+        "-python.defaultInterpreterPath"
+    ],
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.11",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.env.osx": {
+        "PATH": "${env:PATH}:/opt/homebrew/bin"
+    }
+}
