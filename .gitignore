@@ -3,3 +3,5 @@ include
 lib
 pyvenv.cfg
 .env
+install-homebrew.sh
+.zshrc
