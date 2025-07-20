@@ -23,7 +23,7 @@ if not GITHUB_TOKEN:
     exit(1)
 
 # GitHub API URL for the file
-url = "https://raw.githubusercontent.com/jforbes24/apple/main/D%26T%20Data%20Test%20No%201.xlsx"
+url = "https://raw.githubusercontent.com/jforbes24/apple/main/APPLE%20Task%201/D%26T%20Data%20Test%20No%201.xlsx"
 headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 try:
