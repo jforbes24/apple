@@ -1,30 +1,20 @@
 import pandas as pd
-import requests
 import os
 from io import BytesIO
 import zipfile
 import xml.etree.ElementTree as ET
 import shutil
 
-# URL of the Numbers file
-url = "https://github.com/jforbes24/apple/raw/main/D%26T%20Test%20No%202.numbers"
+# Path to the local Numbers file
+local_file_path = "/Users/jforbes84/Documents/GitHub/apple/APPLE Task 2/D&T Test No 2.numbers"
 
-# Download the Numbers file with headers to mimic a browser request
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-}
+# Read the local Numbers file
 try:
-    response = requests.get(url, headers=headers)
-    if response.status_code != 200:
-        print(f"Failed to download the file. HTTP Status Code: {response.status_code}")
-        print(f"Response Text: {response.text[:500]}")  # Print first 500 chars of response for debugging
-        raise Exception("Failed to download the file")
-except requests.RequestException as e:
-    print(f"Error during request: {e}")
+    with open(local_file_path, "rb") as f:
+        numbers_file = BytesIO(f.read())
+except FileNotFoundError:
+    print(f"Error: File not found at {local_file_path}")
     raise
-
-# Numbers files are zip archives; extract the contents
-numbers_file = BytesIO(response.content)
 
 # Create a temporary directory to extract the file
 temp_dir = "temp_numbers"
@@ -33,16 +23,38 @@ try:
     with zipfile.ZipFile(numbers_file, 'r') as zip_ref:
         zip_ref.extractall(temp_dir)
 except zipfile.BadZipFile:
-    print("Error: The downloaded file is not a valid zip file. It may not be a Numbers file.")
+    print("Error: The file is not a valid zip file. It may not be a Numbers file.")
     shutil.rmtree(temp_dir)
     raise
 
-# Find the main data file (index.xml) within the Numbers file
-index_file_path = os.path.join(temp_dir, "index.xml")
-if not os.path.exists(index_file_path):
-    print(f"Error: index.xml not found in {temp_dir}")
+# Debug: List all files in the extracted directory
+print("Extracted files in temp_numbers:")
+for root, dirs, files in os.walk(temp_dir):
+    for file in files:
+        print(os.path.join(root, file))
+
+# Find the main data file (index.xml or alternative)
+index_file_path = None
+possible_index_files = ["index.xml", "Data"]
+for possible_file in possible_index_files:
+    candidate_path = os.path.join(temp_dir, possible_file)
+    if os.path.exists(candidate_path):
+        index_file_path = candidate_path
+        print(f"Found data file: {index_file_path}")
+        break
+    # Check for nested directories (e.g., Contents/index.xml)
+    for root, _, files in os.walk(temp_dir):
+        if possible_file in files:
+            index_file_path = os.path.join(root, possible_file)
+            print(f"Found data file: {index_file_path}")
+            break
+    if index_file_path:
+        break
+
+if not index_file_path:
+    print(f"Error: No data file (index.xml or Data) found in {temp_dir}")
     shutil.rmtree(temp_dir)
-    raise FileNotFoundError("index.xml not found in the Numbers file")
+    raise FileNotFoundError("No data file found in the Numbers file")
 
 # Parse the XML to extract table data
 try:
