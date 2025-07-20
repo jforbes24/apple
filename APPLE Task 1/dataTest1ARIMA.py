@@ -37,6 +37,18 @@ except Exception as e:
     print(f"Error loading the Excel file: {e}")
     exit(1)
 
+# Print column names for debugging
+print("\nColumns in the DataFrame:")
+print(df.columns.tolist())
+
+# Check if required columns exist
+required_columns = ['Product Code', 'Product', 'FISCAL_QTR_YEAR_NAME', 'FISCAL_WEEK_YEAR_NAME', 'Sessions', 'PDP Add to Cart Units', 'Units Sold']
+missing_columns = [col for col in required_columns if col not in df.columns]
+if missing_columns:
+    print(f"Error: The following required columns are missing: {missing_columns}")
+    print("Please verify the column names in the Excel file.")
+    exit(1)
+
 # Function to parse fiscal quarter and year
 def parse_fiscal_quarter(fiscal_qtr):
     try:
@@ -65,21 +77,30 @@ def parse_fiscal_week(fiscal_week):
 # Clean metric columns to remove commas and convert to numeric
 metric_columns = ['Sessions', 'PDP Add to Cart Units', 'Units Sold']
 for col in metric_columns:
-    if df[col].dtype == 'object':
+    if col in df.columns and df[col].dtype == 'object':
         df[col] = pd.to_numeric(df[col].str.replace(',', ''), errors='coerce')
+    else:
+        print(f"Warning: Column '{col}' not found or not of type object")
 
 # Add new date columns
 df['Quarter_Start_Date'] = df['FISCAL_QTR_YEAR_NAME'].apply(parse_fiscal_quarter)
 df['Week_Start_Date'] = df['FISCAL_WEEK_YEAR_NAME'].apply(parse_fiscal_week)
 
+# Filter for rows where both Product Code and Product are populated
+df = df.dropna(subset=['Product Code', 'Product'])
+
 # Ensure Week_Start_Date is sorted
 df = df.sort_values('Week_Start_Date')
 
 # Function to fit ARIMA model and forecast
-def forecast_metric(data, metric, steps=4, order=(1,1,1)):
+def forecast_metric(data, metric, product_code, product, steps=10, order=(1,1,1)):
     try:
-        # Prepare time series data
-        ts = data.set_index('Week_Start_Date')[metric].dropna()
+        # Filter data for specific product_code and product
+        ts_data = data[(data['Product Code'] == product_code) & (data['Product'] == product)]
+        ts = ts_data.set_index('Week_Start_Date')[metric].dropna()
+        if len(ts) < 2:  # Ensure enough data points
+            print(f"Not enough data for {metric} with Product Code {product_code} and Product {product}")
+            return pd.Series([None] * steps)
         # Fit ARIMA model
         model = ARIMA(ts, order=order)
         model_fit = model.fit()
@@ -87,28 +108,53 @@ def forecast_metric(data, metric, steps=4, order=(1,1,1)):
         forecast = model_fit.forecast(steps=steps)
         return forecast
     except Exception as e:
-        print(f"Error forecasting {metric}: {e}")
+        print(f"Error forecasting {metric} for Product Code {product_code}, Product {product}: {e}")
         return pd.Series([None] * steps)
 
-# Forecast 4 weeks ahead
-forecast_steps = 4
+# Forecast 10 weeks ahead
+forecast_steps = 10
 last_date = df['Week_Start_Date'].max()
 forecast_dates = [last_date + timedelta(weeks=i+1) for i in range(forecast_steps)]
 
-# Create forecast DataFrame
-forecast_data = {
-    'Week_Start_Date': forecast_dates,
-    'FISCAL_WEEK_YEAR_NAME': [f"FY{(last_date.year % 100) + (1 if last_date.month >= 10 else 0)}W{i+1}" for i in range(forecast_steps)],
-    'FISCAL_QTR_YEAR_NAME': [df['FISCAL_QTR_YEAR_NAME'].iloc[-1]] * forecast_steps  # Assume same quarter
-}
-
-# Forecast each metric
-for metric in metric_columns:
-    forecast_values = forecast_metric(df, metric, steps=forecast_steps)
-    forecast_data[metric] = forecast_values.values
+# Get unique product_code and product combinations
+product_combinations = df[['Product Code', 'Product']].drop_duplicates()
 
 # Create forecast DataFrame
-forecast_df = pd.DataFrame(forecast_data)
+forecast_rows = []
+for _, row in product_combinations.iterrows():
+    product_code = row['Product Code']
+    product = row['Product']
+    last_fiscal_week = df[df['Product Code'] == product_code]['FISCAL_WEEK_YEAR_NAME'].iloc[-1]
+    last_week_num = int(last_fiscal_week[5:]) if last_fiscal_week else 1
+    last_year = int(last_fiscal_week[2:4]) + 2000 if last_fiscal_week else last_date.year % 100
+    last_quarter = df[df['Product Code'] == product_code]['FISCAL_QTR_YEAR_NAME'].iloc[-1]
+    
+    for i in range(forecast_steps):
+        week_num = last_week_num + i + 1
+        year_adjust = 0
+        if week_num > 52:  # Handle fiscal year rollover
+            week_num = week_num % 52
+            year_adjust = 1
+        fiscal_week = f"FY{(last_year % 100) + year_adjust:02d}W{week_num:02d}"
+        
+        forecast_row = {
+            'Product Code': product_code,
+            'Product': product,
+            'FISCAL_WEEK_YEAR_NAME': fiscal_week,
+            'FISCAL_QTR_YEAR_NAME': last_quarter,  # Assume same quarter for simplicity
+            'Week_Start_Date': forecast_dates[i],
+            'Quarter_Start_Date': parse_fiscal_quarter(last_quarter)
+        }
+        
+        # Forecast each metric
+        for metric in metric_columns:
+            forecast_values = forecast_metric(df, metric, product_code, product, steps=forecast_steps)
+            forecast_row[metric] = forecast_values.values[i]
+        
+        forecast_rows.append(forecast_row)
+
+# Create forecast DataFrame
+forecast_df = pd.DataFrame(forecast_rows)
 
 # Append forecasts to original DataFrame
 df = pd.concat([df, forecast_df], ignore_index=True)
