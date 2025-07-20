@@ -49,6 +49,17 @@ if missing_columns:
     print("Please verify the column names in the Excel file.")
     exit(1)
 
+# Add Data_Type column to original data
+df['Data_Type'] = 'Actual'
+
+# Clean metric columns to remove commas and convert to numeric
+metric_columns = ['Sessions', 'PDP Add to Cart Units', 'Units Sold']
+for col in metric_columns:
+    if col in df.columns and df[col].dtype == 'object':
+        df[col] = pd.to_numeric(df[col].str.replace(',', ''), errors='coerce')
+    else:
+        print(f"Warning: Column '{col}' not found or not of type object")
+
 # Function to parse fiscal quarter and year
 def parse_fiscal_quarter(fiscal_qtr):
     try:
@@ -74,14 +85,6 @@ def parse_fiscal_week(fiscal_week):
         print(f"Error parsing fiscal week {fiscal_week}: {e}")
         return pd.NaT
 
-# Clean metric columns to remove commas and convert to numeric
-metric_columns = ['Sessions', 'PDP Add to Cart Units', 'Units Sold']
-for col in metric_columns:
-    if col in df.columns and df[col].dtype == 'object':
-        df[col] = pd.to_numeric(df[col].str.replace(',', ''), errors='coerce')
-    else:
-        print(f"Warning: Column '{col}' not found or not of type object")
-
 # Add new date columns
 df['Quarter_Start_Date'] = df['FISCAL_QTR_YEAR_NAME'].apply(parse_fiscal_quarter)
 df['Week_Start_Date'] = df['FISCAL_WEEK_YEAR_NAME'].apply(parse_fiscal_week)
@@ -93,13 +96,13 @@ df = df.dropna(subset=['Product Code', 'Product'])
 df = df.sort_values('Week_Start_Date')
 
 # Function to fit ARIMA model and forecast
-def forecast_metric(data, metric, product_code, product, steps=10, order=(1,1,1)):
+def forecast_metric(data, metric, product, steps=10, order=(1,1,1)):
     try:
-        # Filter data for specific product_code and product
-        ts_data = data[(data['Product Code'] == product_code) & (data['Product'] == product)]
-        ts = ts_data.set_index('Week_Start_Date')[metric].dropna()
+        # Filter data for specific product and aggregate by Week_Start_Date
+        ts_data = data[data['Product'] == product].groupby('Week_Start_Date')[metric].sum()
+        ts = ts_data.dropna()
         if len(ts) < 2:  # Ensure enough data points
-            print(f"Not enough data for {metric} with Product Code {product_code} and Product {product}")
+            print(f"Not enough data for {metric} with Product {product}")
             return pd.Series([None] * steps)
         # Fit ARIMA model
         model = ARIMA(ts, order=order)
@@ -108,7 +111,7 @@ def forecast_metric(data, metric, product_code, product, steps=10, order=(1,1,1)
         forecast = model_fit.forecast(steps=steps)
         return forecast
     except Exception as e:
-        print(f"Error forecasting {metric} for Product Code {product_code}, Product {product}: {e}")
+        print(f"Error forecasting {metric} for Product {product}: {e}")
         return pd.Series([None] * steps)
 
 # Forecast 10 weeks ahead
@@ -116,18 +119,18 @@ forecast_steps = 10
 last_date = df['Week_Start_Date'].max()
 forecast_dates = [last_date + timedelta(weeks=i+1) for i in range(forecast_steps)]
 
-# Get unique product_code and product combinations
-product_combinations = df[['Product Code', 'Product']].drop_duplicates()
+# Get unique products
+products = df['Product'].unique()
 
 # Create forecast DataFrame
 forecast_rows = []
-for _, row in product_combinations.iterrows():
-    product_code = row['Product Code']
-    product = row['Product']
-    last_fiscal_week = df[df['Product Code'] == product_code]['FISCAL_WEEK_YEAR_NAME'].iloc[-1]
+for product in products:
+    # Get last fiscal week and quarter for the product
+    product_data = df[df['Product'] == product]
+    last_fiscal_week = product_data['FISCAL_WEEK_YEAR_NAME'].iloc[-1]
     last_week_num = int(last_fiscal_week[5:]) if last_fiscal_week else 1
     last_year = int(last_fiscal_week[2:4]) + 2000 if last_fiscal_week else last_date.year % 100
-    last_quarter = df[df['Product Code'] == product_code]['FISCAL_QTR_YEAR_NAME'].iloc[-1]
+    last_quarter = product_data['FISCAL_QTR_YEAR_NAME'].iloc[-1]
     
     for i in range(forecast_steps):
         week_num = last_week_num + i + 1
@@ -138,17 +141,17 @@ for _, row in product_combinations.iterrows():
         fiscal_week = f"FY{(last_year % 100) + year_adjust:02d}W{week_num:02d}"
         
         forecast_row = {
-            'Product Code': product_code,
             'Product': product,
             'FISCAL_WEEK_YEAR_NAME': fiscal_week,
-            'FISCAL_QTR_YEAR_NAME': last_quarter,  # Assume same quarter for simplicity
+            'FISCAL_QTR_YEAR_NAME': last_quarter,
             'Week_Start_Date': forecast_dates[i],
-            'Quarter_Start_Date': parse_fiscal_quarter(last_quarter)
+            'Quarter_Start_Date': parse_fiscal_quarter(last_quarter),
+            'Data_Type': 'Forecast'
         }
         
         # Forecast each metric
         for metric in metric_columns:
-            forecast_values = forecast_metric(df, metric, product_code, product, steps=forecast_steps)
+            forecast_values = forecast_metric(df, metric, product, steps=forecast_steps)
             forecast_row[metric] = forecast_values.values[i]
         
         forecast_rows.append(forecast_row)
@@ -156,11 +159,24 @@ for _, row in product_combinations.iterrows():
 # Create forecast DataFrame
 forecast_df = pd.DataFrame(forecast_rows)
 
+# Ensure forecast_df has all necessary columns (set Product Code to None for forecasts)
+forecast_df['Product Code'] = None  # Since forecasts are at Product level, not Product Code
+
+# Reorder columns to match original DataFrame
+df_columns = df.columns.tolist()
+forecast_df = forecast_df[df_columns]
+
 # Append forecasts to original DataFrame
 df = pd.concat([df, forecast_df], ignore_index=True)
 
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the path for the CSV file in the same directory as the script
+csv_path = os.path.join(script_dir, 'processed_data_with_forecasts.csv')
+
 # Export the processed DataFrame with forecasts to CSV
-df.to_csv('processed_data_with_forecasts.csv', index=False)
+df.to_csv(csv_path, index=False)
 print("\nDataFrame with forecasts exported to 'processed_data_with_forecasts.csv'")
 
 # Display last few rows including forecasts
