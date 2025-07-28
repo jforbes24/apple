@@ -1,0 +1,776 @@
+2025-07-26 20:52:47,055 - INFO - Starting scraper
+2025-07-26 20:52:47,055 - INFO - Setting up Chrome driver
+2025-07-26 20:52:47,055 - INFO - ====== WebDriver manager ======
+2025-07-26 20:52:50,218 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:52:50,281 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:52:50,327 - INFO - There is no [mac64] chromedriver "138.0.7204.168" for browser google-chrome "138.0.7204" in cache
+2025-07-26 20:52:50,330 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:52:50,479 - INFO - WebDriver version 138.0.7204.168 selected
+2025-07-26 20:52:50,480 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.168/mac-arm64/chromedriver-mac-arm64.zip
+2025-07-26 20:52:50,480 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.168/mac-arm64/chromedriver-mac-arm64.zip
+2025-07-26 20:52:50,542 - INFO - Driver downloading response is 200
+2025-07-26 20:52:52,593 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:52:52,680 - INFO - Driver has been saved in cache [/Users/jforbes84/.wdm/drivers/chromedriver/mac64/138.0.7204.168]
+2025-07-26 20:52:53,791 - INFO - Chrome driver initialized with newer Selenium syntax
+2025-07-26 20:52:53,791 - INFO - Processing category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:52:53,791 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:52:53,791 - INFO - Scraping lister page: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:52:53,791 - INFO - Fetching URL: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:52:56,032 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:52:58,880 - INFO - Page source retrieved, length: 1862511 characters
+2025-07-26 20:52:58,991 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:52:58,996 - INFO - Found 20 products on page
+2025-07-26 20:52:58,996 - INFO - Scraping product information
+2025-07-26 20:52:58,996 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1499, Code: 10273288, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273288.html
+2025-07-26 20:52:58,996 - INFO - Scraping product information
+2025-07-26 20:52:58,996 - INFO - Scraped product: APPLE Mac Studio - M3 Ultra, 1 TB SSD, Silver, Price: 4199, Code: 10277096, Rating: No rating, Reviews: No reviews, URL: https://www.currys.co.uk/products/apple-mac-studio-m3-ultra-1-tb-ssd-silver-10277096.html
+2025-07-26 20:52:58,996 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1249, Code: 10273280, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273280.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1299, Code: 10273282, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273282.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1299, Code: 10273283, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273283.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1299, Code: 10273281, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273281.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 799, Code: 10273295, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273295.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1899, Code: 10273275, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273275.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Pink, Price: 1899, Code: 10273278, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-pink-10273278.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 999, Code: 10273293, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273293.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,997 - INFO - Scraped product: APPLE Mac mini (2024) - M4 Pro, 512 GB SSD, Silver, Price: 1399, Code: 10273292, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-pro-512-gb-ssd-silver-10273292.html
+2025-07-26 20:52:58,997 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1699, Code: 10273285, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273285.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1699, Code: 10273289, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273289.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1899, Code: 10273277, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273277.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1499, Code: 10273286, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273286.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1499, Code: 10273284, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273284.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1499, Code: 10273290, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273290.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1699, Code: 10273287, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273287.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1899, Code: 10273276, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273276.html
+2025-07-26 20:52:58,998 - INFO - Scraping product information
+2025-07-26 20:52:58,998 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 256 GB SSD, Silver, Price: 569, Code: 10273294, Rating: 4.80
+            out of 5 stars, Reviews: 16 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-256-gb-ssd-silver-10273294.html
+2025-07-26 20:52:58,998 - INFO - Collected 20 valid products from page
+2025-07-26 20:52:59,002 - INFO - Next page link: None
+2025-07-26 20:52:59,002 - INFO - Total products collected in category so far: 20
+2025-07-26 20:52:59,002 - INFO - No more pages in category
+2025-07-26 20:52:59,002 - INFO - Finished scraping category, collected 20 products
+2025-07-26 20:52:59,002 - INFO - Total products collected across all categories: 20
+2025-07-26 20:52:59,002 - INFO - Processing category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:52:59,002 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:52:59,002 - INFO - Scraping lister page: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:52:59,002 - INFO - Fetching URL: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:52:59,076 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:53:02,895 - INFO - Page source retrieved, length: 4875 characters
+2025-07-26 20:53:02,897 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:53:02,898 - WARNING - No product grid found on page
+2025-07-26 20:53:02,898 - INFO - Collected 0 valid products from page
+2025-07-26 20:53:02,898 - INFO - Next page link: None
+2025-07-26 20:53:02,898 - INFO - Total products collected in category so far: 0
+2025-07-26 20:53:02,898 - INFO - No more pages in category
+2025-07-26 20:53:02,898 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:53:02,898 - INFO - Total products collected across all categories: 20
+2025-07-26 20:53:02,898 - INFO - Processing category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:53:02,898 - INFO - Starting to scrape category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:53:02,898 - INFO - Scraping lister page: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:53:02,898 - INFO - Fetching URL: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:53:02,933 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:53:06,219 - INFO - Page source retrieved, length: 4875 characters
+2025-07-26 20:53:06,221 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:53:06,221 - WARNING - No product grid found on page
+2025-07-26 20:53:06,221 - INFO - Collected 0 valid products from page
+2025-07-26 20:53:06,222 - INFO - Next page link: None
+2025-07-26 20:53:06,222 - INFO - Total products collected in category so far: 0
+2025-07-26 20:53:06,222 - INFO - No more pages in category
+2025-07-26 20:53:06,222 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:53:06,222 - INFO - Total products collected across all categories: 20
+2025-07-26 20:53:06,222 - INFO - Processing category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:53:06,222 - INFO - Starting to scrape category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:53:06,222 - INFO - Scraping lister page: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:53:06,222 - INFO - Fetching URL: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:53:06,261 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:53:08,569 - INFO - Page source retrieved, length: 4875 characters
+2025-07-26 20:53:08,571 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:53:08,572 - WARNING - No product grid found on page
+2025-07-26 20:53:08,572 - INFO - Collected 0 valid products from page
+2025-07-26 20:53:08,572 - INFO - Next page link: None
+2025-07-26 20:53:08,572 - INFO - Total products collected in category so far: 0
+2025-07-26 20:53:08,572 - INFO - No more pages in category
+2025-07-26 20:53:08,572 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:53:08,572 - INFO - Total products collected across all categories: 20
+2025-07-26 20:53:08,572 - INFO - Processing category: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:53:08,572 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:53:08,572 - INFO - Scraping lister page: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:53:08,572 - INFO - Fetching URL: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:53:08,618 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:53:10,632 - INFO - Page source retrieved, length: 4875 characters
+2025-07-26 20:53:10,634 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:53:10,634 - WARNING - No product grid found on page
+2025-07-26 20:53:10,634 - INFO - Collected 0 valid products from page
+2025-07-26 20:53:10,635 - INFO - Next page link: None
+2025-07-26 20:53:10,635 - INFO - Total products collected in category so far: 0
+2025-07-26 20:53:10,635 - INFO - No more pages in category
+2025-07-26 20:53:10,635 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:53:10,635 - INFO - Total products collected across all categories: 20
+2025-07-26 20:53:10,635 - INFO - Processing category: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 20:53:10,635 - INFO - Starting to scrape category: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 20:53:10,635 - INFO - Scraping lister page: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 20:53:10,635 - INFO - Fetching URL: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 20:53:10,670 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:53:13,753 - INFO - Page source retrieved, length: 4875 characters
+2025-07-26 20:53:13,756 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:53:13,756 - WARNING - No product grid found on page
+2025-07-26 20:53:13,756 - INFO - Collected 0 valid products from page
+2025-07-26 20:53:13,756 - INFO - Next page link: None
+2025-07-26 20:53:13,756 - INFO - Total products collected in category so far: 0
+2025-07-26 20:53:13,756 - INFO - No more pages in category
+2025-07-26 20:53:13,756 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:53:13,756 - INFO - Total products collected across all categories: 20
+2025-07-26 20:53:13,756 - INFO - Closing Chrome driver
+2025-07-26 20:53:13,847 - INFO - Writing 20 products to CSV
+2025-07-26 20:53:13,848 - INFO - Scraped 20 products from all categories. Data saved to apple_products.csv
+2025-07-26 20:56:11,180 - INFO - Starting scraper
+2025-07-26 20:56:11,180 - INFO - Setting up Chrome driver
+2025-07-26 20:56:11,180 - INFO - ====== WebDriver manager ======
+2025-07-26 20:56:11,300 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:56:11,349 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 20:56:11,400 - INFO - Driver [/Users/jforbes84/.wdm/drivers/chromedriver/mac64/138.0.7204.168/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-26 20:56:11,991 - INFO - Chrome driver initialized with newer Selenium syntax
+2025-07-26 20:56:11,991 - INFO - Processing category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:56:11,991 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:56:11,991 - INFO - Scraping lister page: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:56:11,991 - INFO - Fetching URL: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 20:56:13,691 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:56:15,778 - INFO - Page source retrieved, length: 1858241 characters
+2025-07-26 20:56:15,890 - INFO - Page parsed with BeautifulSoup
+2025-07-26 20:56:15,894 - INFO - Found 20 products using primary grid selector
+2025-07-26 20:56:15,894 - INFO - Scraping product information
+2025-07-26 20:56:15,895 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1499, Code: 10273288, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273288.html
+2025-07-26 20:56:15,895 - INFO - Scraping product information
+2025-07-26 20:56:15,895 - INFO - Scraped product: APPLE Mac Studio - M3 Ultra, 1 TB SSD, Silver, Price: 4199, Code: 10277096, Rating: No rating, Reviews: No reviews, URL: https://www.currys.co.uk/products/apple-mac-studio-m3-ultra-1-tb-ssd-silver-10277096.html
+2025-07-26 20:56:15,895 - INFO - Scraping product information
+2025-07-26 20:56:15,895 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1249, Code: 10273280, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273280.html
+2025-07-26 20:56:15,895 - INFO - Scraping product information
+2025-07-26 20:56:15,895 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1299, Code: 10273282, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273282.html
+2025-07-26 20:56:15,895 - INFO - Scraping product information
+2025-07-26 20:56:15,895 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1299, Code: 10273283, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273283.html
+2025-07-26 20:56:15,895 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1299, Code: 10273281, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273281.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 799, Code: 10273295, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273295.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1899, Code: 10273275, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273275.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Pink, Price: 1899, Code: 10273278, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-pink-10273278.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 999, Code: 10273293, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273293.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE Mac mini (2024) - M4 Pro, 512 GB SSD, Silver, Price: 1399, Code: 10273292, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-pro-512-gb-ssd-silver-10273292.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1699, Code: 10273285, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273285.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1699, Code: 10273289, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273289.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1899, Code: 10273277, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273277.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,896 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1499, Code: 10273286, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273286.html
+2025-07-26 20:56:15,896 - INFO - Scraping product information
+2025-07-26 20:56:15,897 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1499, Code: 10273284, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273284.html
+2025-07-26 20:56:15,897 - INFO - Scraping product information
+2025-07-26 20:56:15,897 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1499, Code: 10273290, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273290.html
+2025-07-26 20:56:15,897 - INFO - Scraping product information
+2025-07-26 20:56:15,897 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1699, Code: 10273287, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273287.html
+2025-07-26 20:56:15,897 - INFO - Scraping product information
+2025-07-26 20:56:15,897 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1899, Code: 10273276, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273276.html
+2025-07-26 20:56:15,897 - INFO - Scraping product information
+2025-07-26 20:56:15,897 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 256 GB SSD, Silver, Price: 569, Code: 10273294, Rating: 4.80
+            out of 5 stars, Reviews: 16 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-256-gb-ssd-silver-10273294.html
+2025-07-26 20:56:15,897 - INFO - Collected 20 valid products from page
+2025-07-26 20:56:15,901 - INFO - Next page link: None
+2025-07-26 20:56:15,901 - INFO - Total products collected in category so far: 20
+2025-07-26 20:56:15,901 - INFO - No more pages in category
+2025-07-26 20:56:15,901 - INFO - Finished scraping category, collected 20 products
+2025-07-26 20:56:15,901 - INFO - Total products collected across all categories: 20
+2025-07-26 20:56:15,901 - INFO - Processing category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:56:15,901 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:56:15,901 - INFO - Scraping lister page: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:56:15,901 - INFO - Fetching URL: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 20:56:15,995 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:56:31,346 - ERROR - Error fetching https://www.currys.co.uk/computing/laptops/laptops/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:56:31,350 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 20:56:35,154 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 20:56:50,537 - ERROR - Error fetching https://www.currys.co.uk/computing/laptops/laptops/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:56:50,541 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 20:56:54,631 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 20:57:10,035 - ERROR - Error fetching https://www.currys.co.uk/computing/laptops/laptops/apple (attempt 3/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:57:10,038 - INFO - Saved failed page source to failed_page_3_apple.html
+2025-07-26 20:57:12,225 - ERROR - Failed to fetch https://www.currys.co.uk/computing/laptops/laptops/apple after 3 attempts
+2025-07-26 20:57:12,225 - ERROR - No soup object returned, skipping page
+2025-07-26 20:57:12,225 - INFO - Total products collected in category so far: 0
+2025-07-26 20:57:12,225 - INFO - No more pages in category
+2025-07-26 20:57:12,225 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:57:12,225 - INFO - Total products collected across all categories: 20
+2025-07-26 20:57:12,225 - INFO - Processing category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:57:12,225 - INFO - Starting to scrape category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:57:12,225 - INFO - Scraping lister page: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:57:12,225 - INFO - Fetching URL: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 20:57:12,268 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:57:27,632 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:57:27,634 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 20:57:31,179 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 20:57:46,551 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:57:46,554 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 20:57:49,653 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 20:58:05,015 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple (attempt 3/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:58:05,018 - INFO - Saved failed page source to failed_page_3_apple.html
+2025-07-26 20:58:09,478 - ERROR - Failed to fetch https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple after 3 attempts
+2025-07-26 20:58:09,479 - ERROR - No soup object returned, skipping page
+2025-07-26 20:58:09,479 - INFO - Total products collected in category so far: 0
+2025-07-26 20:58:09,480 - INFO - No more pages in category
+2025-07-26 20:58:09,480 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:58:09,480 - INFO - Total products collected across all categories: 20
+2025-07-26 20:58:09,480 - INFO - Processing category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:58:09,481 - INFO - Starting to scrape category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:58:09,481 - INFO - Scraping lister page: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:58:09,481 - INFO - Fetching URL: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 20:58:09,526 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:58:24,899 - ERROR - Error fetching https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:58:24,903 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 20:58:28,491 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 20:58:43,874 - ERROR - Error fetching https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:58:43,878 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 20:58:46,694 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 20:59:02,087 - ERROR - Error fetching https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple (attempt 3/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:59:02,089 - INFO - Saved failed page source to failed_page_3_apple.html
+2025-07-26 20:59:04,328 - ERROR - Failed to fetch https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple after 3 attempts
+2025-07-26 20:59:04,329 - ERROR - No soup object returned, skipping page
+2025-07-26 20:59:04,329 - INFO - Total products collected in category so far: 0
+2025-07-26 20:59:04,329 - INFO - No more pages in category
+2025-07-26 20:59:04,329 - INFO - Finished scraping category, collected 0 products
+2025-07-26 20:59:04,329 - INFO - Total products collected across all categories: 20
+2025-07-26 20:59:04,329 - INFO - Processing category: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:59:04,329 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:59:04,329 - INFO - Scraping lister page: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:59:04,329 - INFO - Fetching URL: https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple
+2025-07-26 20:59:04,374 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 20:59:19,762 - ERROR - Error fetching https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:59:19,765 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 20:59:22,899 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 20:59:38,273 - ERROR - Error fetching https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:59:38,275 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 20:59:42,741 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 20:59:58,132 - ERROR - Error fetching https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple (attempt 3/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 20:59:58,135 - INFO - Saved failed page source to failed_page_3_apple.html
+2025-07-26 21:00:00,721 - ERROR - Failed to fetch https://www.currys.co.uk/computing/ipad-tablets-and-ereaders/tablets/apple after 3 attempts
+2025-07-26 21:00:00,721 - ERROR - No soup object returned, skipping page
+2025-07-26 21:00:00,721 - INFO - Total products collected in category so far: 0
+2025-07-26 21:00:00,722 - INFO - No more pages in category
+2025-07-26 21:00:00,722 - INFO - Finished scraping category, collected 0 products
+2025-07-26 21:00:00,722 - INFO - Total products collected across all categories: 20
+2025-07-26 21:00:00,722 - INFO - Processing category: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 21:00:00,722 - INFO - Starting to scrape category: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 21:00:00,722 - INFO - Scraping lister page: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 21:00:00,722 - INFO - Fetching URL: https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple
+2025-07-26 21:00:00,773 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 21:00:16,181 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 21:00:16,184 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 21:00:18,565 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 21:00:33,946 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 21:00:33,949 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 21:00:36,270 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 21:00:51,654 - ERROR - Error fetching https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple (attempt 3/3): Message: 
+Stacktrace:
+0   chromedriver                        0x00000001046d7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001046cf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010421e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010426571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001042a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000104259a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010469a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x000000010469d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010467b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x000000010469e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x000000010466c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x00000001046be00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x00000001046be198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x00000001046cf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 21:00:51,657 - INFO - Saved failed page source to failed_page_3_apple.html
+2025-07-26 21:00:54,738 - ERROR - Failed to fetch https://www.currys.co.uk/phones/mobile-phone-accessories/mobile-phone-accessories/apple after 3 attempts
+2025-07-26 21:00:54,739 - ERROR - No soup object returned, skipping page
+2025-07-26 21:00:54,739 - INFO - Total products collected in category so far: 0
+2025-07-26 21:00:54,739 - INFO - No more pages in category
+2025-07-26 21:00:54,739 - INFO - Finished scraping category, collected 0 products
+2025-07-26 21:00:54,740 - INFO - Total products collected across all categories: 20
+2025-07-26 21:00:54,740 - INFO - Closing Chrome driver
+2025-07-26 21:00:54,846 - INFO - Writing 20 products to CSV
+2025-07-26 21:00:54,846 - INFO - Scraped 20 products from all categories. Data saved to apple_products_dataLayer.csv
+2025-07-26 21:41:03,689 - INFO - Starting scraper
+2025-07-26 21:41:03,690 - INFO - Setting up Chrome driver
+2025-07-26 21:41:03,690 - INFO - ====== WebDriver manager ======
+2025-07-26 21:41:03,853 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 21:41:03,914 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-26 21:41:03,960 - INFO - Driver [/Users/jforbes84/.wdm/drivers/chromedriver/mac64/138.0.7204.168/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-26 21:41:04,869 - INFO - Chrome driver initialized with newer Selenium syntax
+2025-07-26 21:41:04,869 - INFO - Processing category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 21:41:04,869 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 21:41:04,869 - INFO - Scraping lister page: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 21:41:04,869 - INFO - Fetching URL: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 21:41:07,326 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 21:41:09,535 - INFO - Page source retrieved, length: 1862676 characters
+2025-07-26 21:41:09,650 - INFO - Page parsed with BeautifulSoup
+2025-07-26 21:41:09,655 - INFO - Found 20 products using primary grid selector
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,655 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1499, Code: 10273288, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273288.html
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,655 - INFO - Scraped product: APPLE Mac Studio - M3 Ultra, 1 TB SSD, Silver, Price: 4199, Code: 10277096, Rating: No rating, Reviews: No reviews, URL: https://www.currys.co.uk/products/apple-mac-studio-m3-ultra-1-tb-ssd-silver-10277096.html
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,655 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1249, Code: 10273280, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273280.html
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,655 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Blue, Price: 1299, Code: 10273282, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-blue-10273282.html
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,655 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1299, Code: 10273283, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273283.html
+2025-07-26 21:41:09,655 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1299, Code: 10273281, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273281.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 799, Code: 10273295, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273295.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1899, Code: 10273275, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273275.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Pink, Price: 1899, Code: 10273278, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-pink-10273278.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 512 GB SSD, Silver, Price: 999, Code: 10273293, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-512-gb-ssd-silver-10273293.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE Mac mini (2024) - M4 Pro, 512 GB SSD, Silver, Price: 1399, Code: 10273292, Rating: 4.80
+            out of 5 stars, Reviews: 22 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-pro-512-gb-ssd-silver-10273292.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Silver, Price: 1699, Code: 10273285, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-silver-10273285.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1699, Code: 10273289, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273289.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,656 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Blue, Price: 1899, Code: 10273277, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-blue-10273277.html
+2025-07-26 21:41:09,656 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Green, Price: 1499, Code: 10273286, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-green-10273286.html
+2025-07-26 21:41:09,657 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Silver, Price: 1499, Code: 10273284, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-silver-10273284.html
+2025-07-26 21:41:09,657 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 256 GB SSD, Pink, Price: 1499, Code: 10273290, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-256-gb-ssd-pink-10273290.html
+2025-07-26 21:41:09,657 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1699, Code: 10273287, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273287.html
+2025-07-26 21:41:09,657 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE iMac 4.5K 24" (2024) - M4, 512 GB SSD, Green, Price: 1899, Code: 10273276, Rating: 4.80
+            out of 5 stars, Reviews: 64 reviews, URL: https://www.currys.co.uk/products/apple-imac-4.5k-24-2024-m4-512-gb-ssd-green-10273276.html
+2025-07-26 21:41:09,657 - INFO - Scraping product information
+2025-07-26 21:41:09,657 - INFO - Scraped product: APPLE Mac mini (2024) - M4, 256 GB SSD, Silver, Price: 569, Code: 10273294, Rating: 4.80
+            out of 5 stars, Reviews: 16 reviews, URL: https://www.currys.co.uk/products/apple-mac-mini-2024-m4-256-gb-ssd-silver-10273294.html
+2025-07-26 21:41:09,657 - INFO - Collected 20 valid products from page
+2025-07-26 21:41:09,660 - INFO - Next page link: None
+2025-07-26 21:41:09,660 - INFO - Total products collected in category so far: 20
+2025-07-26 21:41:09,660 - INFO - No more pages in category
+2025-07-26 21:41:09,660 - INFO - Finished scraping category, collected 20 products
+2025-07-26 21:41:09,660 - INFO - Total products collected across all categories: 20
+2025-07-26 21:41:09,660 - INFO - Processing category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 21:41:09,660 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 21:41:09,660 - INFO - Scraping lister page: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 21:41:09,660 - INFO - Fetching URL: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 21:41:09,727 - INFO - Waiting for page to load (attempt 1/3)
+2025-07-26 21:41:25,075 - ERROR - Error fetching https://www.currys.co.uk/computing/laptops/laptops/apple (attempt 1/3): Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100ad7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000100acf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010061e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010066571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001006a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000100659a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x0000000100a9a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x0000000100a9d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x0000000100a7b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x0000000100a9e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x0000000100a6c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x0000000100abe00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x0000000100abe198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x0000000100acf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 21:41:25,077 - INFO - Saved failed page source to failed_page_1_apple.html
+2025-07-26 21:41:29,998 - INFO - Waiting for page to load (attempt 2/3)
+2025-07-26 21:41:45,386 - ERROR - Error fetching https://www.currys.co.uk/computing/laptops/laptops/apple (attempt 2/3): Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100ad7570 cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000100acf468 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x000000010061e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010066571c cxxbridge1$string$len + 382284
+4   chromedriver                        0x00000001006a6b1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x0000000100659a0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x0000000100a9a5f4 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x0000000100a9d85c cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x0000000100a7b248 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x0000000100a9e118 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x0000000100a6c2f8 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x0000000100abe00c cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x0000000100abe198 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x0000000100acf0a4 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x000000019759ec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000197599b80 thread_start + 8
+
+2025-07-26 21:41:45,389 - INFO - Saved failed page source to failed_page_2_apple.html
+2025-07-26 21:41:48,821 - INFO - Waiting for page to load (attempt 3/3)
+2025-07-26 22:22:21,378 - INFO - Starting scraper
+2025-07-26 22:22:21,379 - INFO - Processing category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 22:22:21,379 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 22:22:21,379 - INFO - Scraping lister page: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 22:22:21,379 - INFO - Fetching URL with Playwright: https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 22:22:24,794 - ERROR - Cloudflare block detected on https://www.currys.co.uk/computing/desktop-pcs/desktops/apple
+2025-07-26 22:22:24,821 - ERROR - No soup object returned, skipping page
+2025-07-26 22:22:24,821 - INFO - Total products collected in category so far: 0
+2025-07-26 22:22:24,821 - INFO - No more pages in category
+2025-07-26 22:22:24,821 - INFO - Finished scraping category, collected 0 products
+2025-07-26 22:22:24,821 - INFO - Total products collected across all categories: 0
+2025-07-26 22:22:33,321 - INFO - Processing category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 22:22:33,322 - INFO - Starting to scrape category: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 22:22:33,322 - INFO - Scraping lister page: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 22:22:33,322 - INFO - Fetching URL with Playwright: https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 22:22:35,023 - ERROR - Cloudflare block detected on https://www.currys.co.uk/computing/laptops/laptops/apple
+2025-07-26 22:22:35,045 - ERROR - No soup object returned, skipping page
+2025-07-26 22:22:35,045 - INFO - Total products collected in category so far: 0
+2025-07-26 22:22:35,045 - INFO - No more pages in category
+2025-07-26 22:22:35,045 - INFO - Finished scraping category, collected 0 products
+2025-07-26 22:22:35,045 - INFO - Total products collected across all categories: 0
+2025-07-26 22:22:42,970 - INFO - Processing category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 22:22:42,971 - INFO - Starting to scrape category: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 22:22:42,971 - INFO - Scraping lister page: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 22:22:42,973 - INFO - Fetching URL with Playwright: https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 22:22:44,792 - ERROR - Cloudflare block detected on https://www.currys.co.uk/phones/mobile-phones/mobile-phones/apple
+2025-07-26 22:22:44,815 - ERROR - No soup object returned, skipping page
+2025-07-26 22:22:44,815 - INFO - Total products collected in category so far: 0
+2025-07-26 22:22:44,815 - INFO - No more pages in category
+2025-07-26 22:22:44,815 - INFO - Finished scraping category, collected 0 products
+2025-07-26 22:22:44,815 - INFO - Total products collected across all categories: 0
+2025-07-26 22:22:50,390 - INFO - Processing category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 22:22:50,391 - INFO - Starting to scrape category: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 22:22:50,391 - INFO - Scraping lister page: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 22:22:50,391 - INFO - Fetching URL with Playwright: https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 22:22:52,838 - ERROR - Cloudflare block detected on https://www.currys.co.uk/smart-tech/smart-watches-and-fitness/smart-watches/apple
+2025-07-26 22:22:52,863 - ERROR - No soup object returned, skipping page
+2025-07-26 22:22:52,863 - INFO - Total products collected in category so far: 0
+2025-07-26 22:22:52,863 - INFO - No more pages in category
+2025-07-26 22:22:52,863 - INFO - Finished scraping category, collected 0 products
+2025-07-26 22:22:52,863 - INFO - Total products collected across all categories: 0

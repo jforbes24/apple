@@ -3,13 +3,7 @@ import random
 import csv
 import logging
 import json
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # Configure logging
@@ -23,61 +17,71 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def setup_driver():
-    logger.info("Setting up Chrome driver")
+def get_soup_playwright(url, retries=5):
+    logger.info(f"Fetching URL with Playwright: {url}")
     user_agents = [
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1'
     ]
-    chrome_options = Options()
-    chrome_options.add_argument('--headless')  # Run in headless mode
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
-    chrome_options.add_argument('accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
-    chrome_options.add_argument('accept-language=en-US,en;q=0.5')
-    chrome_options.add_argument('accept-encoding=gzip, deflate, br')
-    
-    try:
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
-        logger.info("Chrome driver initialized with newer Selenium syntax")
-    except TypeError:
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=chrome_options)
-        logger.info("Chrome driver initialized with older Selenium syntax (fallback)")
-    return driver
-
-def get_soup(url, driver, retries=3):
-    logger.info(f"Fetching URL: {url}")
-    for attempt in range(retries):
-        try:
-            driver.get(url)
-            logger.info(f"Waiting for page to load (attempt {attempt + 1}/{retries})")
-            # Wait for product grid or product elements
-            WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "div[class*='product-grid'], div.product"))
-            )
-            # Scroll to trigger JavaScript rendering
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(random.uniform(2, 4))  # Additional delay for content to settle
-            page_source = driver.page_source
-            logger.info(f"Page source retrieved, length: {len(page_source)} characters")
-            soup = BeautifulSoup(page_source, 'html.parser')
-            logger.info("Page parsed with BeautifulSoup")
-            return soup
-        except Exception as e:
-            logger.error(f"Error fetching {url} (attempt {attempt + 1}/{retries}): {e}")
-            # Compute filename component outside f-string
-            url_last_part = url.split('/')[-1].replace('/', '_')  # Replace any slashes for valid filename
-            filename = f'failed_page_{attempt + 1}_{url_last_part}.html'
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(driver.page_source)
-            logger.info(f"Saved failed page source to {filename}")
-            time.sleep(random.uniform(2, 5))
-    logger.error(f"Failed to fetch {url} after {retries} attempts")
-    return None
+    with sync_playwright() as p:
+        for attempt in range(retries):
+            try:
+                browser = p.chromium.launch(headless=True)  # Set to False for debugging
+                context = browser.new_context(
+                    user_agent=random.choice(user_agents),
+                    viewport={'width': 1280, 'height': 720}
+                )
+                page = context.new_page()
+                page.goto(url, timeout=60000)  # 60-second timeout
+                content = page.content()
+                
+                # Check for Cloudflare block
+                if "cloudflare" in content.lower() or "sorry, you have been blocked" in content.lower():
+                    logger.error(f"Cloudflare block detected on {url}")
+                    browser.close()
+                    return None
+                
+                # Accept cookies
+                try:
+                    page.click('button[id*="cookie"], button[class*="cookie"], a[class*="cookie"]', timeout=5000)
+                    logger.info("Accepted cookies")
+                    page.wait_for_timeout(random.uniform(1000, 2000))
+                except:
+                    logger.info("No cookie button found")
+                
+                # Multiple scrolls to trigger lazy loading
+                for _ in range(3):
+                    page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                    page.wait_for_timeout(random.uniform(1000, 2000))
+                
+                # Handle "load more" button
+                try:
+                    page.click('button[class*="load-more"], a[class*="load-more"]', timeout=5000)
+                    logger.info("Clicked load more button")
+                    page.wait_for_timeout(3000)
+                except:
+                    logger.info("No load more button found")
+                
+                content = page.content()
+                soup = BeautifulSoup(content, 'html.parser')
+                logger.info(f"Page source retrieved, length: {len(content)} characters")
+                browser.close()
+                return soup
+            except Exception as e:
+                logger.error(f"Error fetching {url} (attempt {attempt + 1}/{retries}): {e}")
+                url_last_part = url.split('/')[-1].replace('/', '_')
+                filename = f'failed_page_{attempt + 1}_{url_last_part}.html'
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(page.content() if 'page' in locals() else '')
+                logger.info(f"Saved failed page source to {filename}")
+                page.wait_for_timeout(random.uniform(5000, 10000))
+            finally:
+                if 'browser' in locals():
+                    browser.close()
+        logger.error(f"Failed to fetch {url} after {retries} attempts")
+        return None
 
 def flatten_product_data(data, product_url, rating_text, reviews_text):
     """Flatten the JSON data-productdatalayer into a dictionary for CSV."""
@@ -196,55 +200,70 @@ def scrape_product_info(product):
         logger.error(f"Error parsing product: {e}")
         return None
 
-def scrape_page(url, driver):
+def scrape_page(url):
     logger.info(f"Scraping lister page: {url}")
-    soup = get_soup(url, driver)
+    soup = get_soup_playwright(url)
     if not soup:
         logger.error("No soup object returned, skipping page")
         return [], None
 
-    # Try primary product grid selector (used in desktop category)
-    product_grid = soup.find('div', class_='row product-grid list-view justify-content-center')
-    if product_grid:
-        products = product_grid.find_all('div', class_='product')
-        logger.info(f"Found {len(products)} products using primary grid selector")
-    else:
-        logger.warning("Primary product grid not found, trying fallback selector")
-        # Fallback: Find all divs with class 'product' or containing data-productdatalayer
-        products = soup.find_all('div', class_='product')
-        if not products:
-            products = soup.find_all('div', attrs={'data-productdatalayer': True})
-        logger.info(f"Found {len(products)} products using fallback selector")
-    
+    # Try multiple product grid selectors
+    product_grid_selectors = [
+        'div[class*="product-grid"]',
+        'div[class*="product-list"]',
+        'div[class*="products"]',
+        'div[class*="results"]'
+    ]
+    products = []
+    for selector in product_grid_selectors:
+        product_grid = soup.select_one(selector)
+        if product_grid:
+            products = product_grid.find_all('div', class_='product')
+            logger.info(f"Found {len(products)} products using selector: {selector}")
+            break
+    if not products:
+        logger.warning("No product grid found, trying fallback selectors")
+        products = soup.find_all('div', class_='product') or \
+                  soup.find_all('div', attrs={'data-productdatalayer': True}) or \
+                  soup.find_all('div', class_='product-card')
+        logger.info(f"Found {len(products)} products using fallback selectors")
+
     product_data = []
     for product in products:
         info = scrape_product_info(product)
         if info:
             product_data.append(info)
-    
+
     logger.info(f"Collected {len(product_data)} valid products from page")
-    
-    next_link = soup.find('a', class_='next')
-    next_url = next_link['href'] if next_link else None
+
+    # Try multiple next link selectors
+    next_link_selectors = ['a.next', 'a[class*="next-page"]', 'a[rel="next"]', 'a[class*="pagination-next"]']
+    next_url = None
+    for selector in next_link_selectors:
+        next_link = soup.select_one(selector)
+        if next_link and 'href' in next_link.attrs:
+            next_url = next_link['href']
+            break
+
     if next_url and not next_url.startswith('http'):
         next_url = 'https://www.currys.co.uk' + next_url
     logger.info(f"Next page link: {next_url if next_url else 'None'}")
-    
+
     return product_data, next_url
 
-def scrape_category(category_url, driver):
+def scrape_category(category_url):
     logger.info(f"Starting to scrape category: {category_url}")
     all_products = []
     current_url = category_url
     while current_url:
-        products, next_path = scrape_page(current_url, driver)
+        products, next_path = scrape_page(current_url)
         all_products.extend(products)
         logger.info(f"Total products collected in category so far: {len(all_products)}")
         
         if next_path:
             current_url = next_path
             logger.info(f"Moving to next page: {current_url}")
-            time.sleep(random.uniform(2, 4))
+            time.sleep(random.uniform(5, 10))
         else:
             logger.info("No more pages in category")
             current_url = None
@@ -253,7 +272,6 @@ def scrape_category(category_url, driver):
     return all_products
 
 def main():
-    # Provided category URLs
     category_urls = [
         'https://www.currys.co.uk/computing/desktop-pcs/desktops/apple',
         'https://www.currys.co.uk/computing/laptops/laptops/apple',
@@ -264,22 +282,17 @@ def main():
     ]
     
     logger.info("Starting scraper")
-    driver = setup_driver()
     all_products = []
     
-    try:
-        for category_url in category_urls:
-            logger.info(f"Processing category: {category_url}")
-            products = scrape_category(category_url, driver)
-            all_products.extend(products)
-            logger.info(f"Total products collected across all categories: {len(all_products)}")
-            time.sleep(random.uniform(5, 10))  # Add delay between categories
-    finally:
-        logger.info("Closing Chrome driver")
-        driver.quit()
+    for category_url in category_urls:
+        logger.info(f"Processing category: {category_url}")
+        products = scrape_category(category_url)
+        all_products.extend(products)
+        logger.info(f"Total products collected across all categories: {len(all_products)}")
+        time.sleep(random.uniform(5, 10))
     
     logger.info(f"Writing {len(all_products)} products to CSV")
-    with open('apple_products_dataLayer.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('apple_products_dataLayer.csv', 'w', newline='', encoding='utf-8-sig') as f:
         fieldnames = [
             'title', 'price_revenue', 'product_code', 'rating', 'reviews', 'url',
             'brand', 'ean', 'sku', 'price_base_revenue', 'price_currency', 'price_tax',
